@@ -1,0 +1,72 @@
+.pixel-container {
+	position: relative;
+	background-image: url(../images/bg.png);
+	background-position: bottom;
+	background-size: cover;
+	width: 100vw;
+	height: calc(100vw / 1.8);
+}
+
+body {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	overflow-x: hidden;
+}
+
+.clickable-banners {
+	opacity: 0;
+}
+
+.clickable-banners:hover {
+	transition: 0.5s ease;
+	opacity: 1;
+	animation: load 3.5s ease-out infinite;
+}
+
+@keyframes load {
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
+.pixel-container .nft-market {
+	position: absolute;
+	bottom: 11vw;
+	right: 7.5vw;
+	background-image: url(../images/nft-market.png);
+	background-position: center;
+	background-size: cover;
+	width: 24vw;
+	height: 36vw;
+}
+
+.pixel-container .left-market {
+	position: absolute;
+	bottom: 6vw;
+	left: 7vw;
+	background-image: url(../images/left-market.png);
+	background-position: center;
+	background-size: cover;
+	width: 30vw;
+	height: 35vw;
+}
+
+.noise {
+	width: 100vw;
+	height: 100vw;
+	position: fixed;
+	top: 0;
+	opacity: 0.5;
+	mix-blend-mode: soft-light;
+	left: 0;
+}
