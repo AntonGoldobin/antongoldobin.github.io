@@ -31,7 +31,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: black;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .clickable-banners {
@@ -39,7 +39,7 @@ body {
 	transition: 1s ease;
 }
 
-.clickable-banners:hover {
+.hoverEnabled .clickable-banners:hover {
 	transition: 0.5s ease;
 	opacity: 1;
 }
@@ -116,14 +116,20 @@ body {
 
 .text {
 	opacity: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	animation: fadeInDown; /* referring directly to the animation's @keyframe declaration */
-	animation-duration: 2s; /* don't forget to set a duration! */
+	position: absolute;
+	bottom: 50%;
 	z-index: 1;
-	transition: 2s ease;
+	transition: 1s ease;
+}
+
+.title-animation{
+	transition: 1s ease-in;
+	bottom: 5%;
+}
+
+.title-animation h1 {
+	transition: 1s ease-in;
+	font-size: 3em;
 }
 
 .opacity0 {
@@ -132,7 +138,7 @@ body {
 }
 
 h1 {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'VT323', sans-serif;
 	font-size: 122px;
 	line-height: 124px;
 	color: #ffffff;

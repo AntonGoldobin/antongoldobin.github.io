@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="./styles/glitch.css">
 	<link rel="stylesheet" href="./styles/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +30,13 @@
 		</div>
 		<div class="smoke left-smoke"></div>
 		<div class="smoke right-smoke"></div>
-		<div class="text" data-wow-duration="2s" data-wow-delay="5s">
-			<h1>Hello</h1>
-			<div class="line"></div>
-			<h3>This is a test text</h3>
+		<div class="text animate__animated animate__fadeInDown" data-wow-duration="2s" data-wow-delay="5s">
+			<div id="wrapper">
+				<h1 class="glitch" data-text="rabbit punks">rabbit punks</h1>
+				<span class="sub">Fan Art NFTs For MoonRabbit</span>
+			</div>
 		</div>
-		<div class="main-bg"></div>
+		<div class="main-bg gray"></div>
 	</div>
 </body>
 
@@ -45,7 +47,11 @@
 <script>
 	new WOW().init();
 
+	let isLoaded = false;
+
 	const bannerHovered = (className) => {
+		if (!isLoaded) return;
+		console.log(isLoaded)
 		$('.main-bg').addClass('gray');
 		$(className).removeClass(' animate__fadeOutUp')
 		$(className).addClass(' animate__fadeInDown')
@@ -53,6 +59,7 @@
 
 
 	const bannerUnhovered = (className) => {
+		if (!isLoaded) return;
 		$('.main-bg').removeClass('gray');
 		$(className).removeClass('animate__fadeInDown')
 		$(className).addClass(' animate__fadeOutUp')
@@ -61,8 +68,12 @@
 	$('.nft-market').mouseenter(() => bannerHovered('.nft-dialog')).mouseleave(() => bannerUnhovered('.nft-dialog'));
 	$('.left-market').mouseenter(() => bannerHovered('.left-dialog')).mouseleave(() => bannerUnhovered('.left-dialog'));
 
-
-	setTimeout(() => $('.text').addClass('opacity0'), 3000)
+	setTimeout(() => {	
+		$('.text').addClass('title-animation');
+		$('.main-bg').removeClass('gray');
+		$('.pixel-container').addClass('hoverEnabled');
+		isLoaded = true;
+	}, 2000)
 		
 
 	var canvas = null;
