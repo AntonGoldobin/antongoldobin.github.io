@@ -9,7 +9,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&family=Source+Sans+Pro&family=Space+Mono&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&family=Source+Sans+Pro&family=Space+Mono&family=VT323&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 		integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
@@ -21,22 +21,43 @@
 		<canvas id="tv" width="1200" height="1200" class="noise"></canvas>
 		<div class="nft-market clickable-banners"></div>
 		<div class="left-market clickable-banners"></div>
+		<div class="dialog nft-dialog animate__animated">
+			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
+		</div>
+		<div class="smoke left-smoke"></div>
+		<div class="smoke right-smoke"></div>
 		<div class="text" data-wow-duration="2s" data-wow-delay="5s">
 			<h1>Hello</h1>
 			<div class="line"></div>
 			<h3>This is a test text</h3>
 		</div>
+		<div class="main-bg"></div>
 	</div>
 </body>
 
 </html>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 <script>
 	new WOW().init();
-</script>
 
-<script>
+	const bannerHovered = (className) => {
+		$('.main-bg').addClass('gray');
+		$(className).removeClass(' animate__fadeOutUp')
+		$(className).addClass(' animate__fadeInDown')
+	};
+
+
+	const bannerUnhovered = (className) => {
+		$('.main-bg').removeClass('gray');
+		$(className).removeClass('animate__fadeInDown')
+		$(className).addClass(' animate__fadeOutUp')
+	};
+
+	$('.nft-market').mouseenter(() => bannerHovered('.nft-dialog')).mouseleave(() => bannerUnhovered('.nft-dialog'));
+
+
 
 	var canvas = null;
 	var context = null;
