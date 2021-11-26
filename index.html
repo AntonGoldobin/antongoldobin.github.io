@@ -24,6 +24,9 @@
 		<div class="dialog nft-dialog animate__animated">
 			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
 		</div>
+		<div class="dialog left-dialog animate__animated">
+			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
+		</div>
 		<div class="smoke left-smoke"></div>
 		<div class="smoke right-smoke"></div>
 		<div class="text" data-wow-duration="2s" data-wow-delay="5s">
@@ -56,8 +59,11 @@
 	};
 
 	$('.nft-market').mouseenter(() => bannerHovered('.nft-dialog')).mouseleave(() => bannerUnhovered('.nft-dialog'));
+	$('.left-market').mouseenter(() => bannerHovered('.left-dialog')).mouseleave(() => bannerUnhovered('.left-dialog'));
 
 
+	setTimeout(() => $('.text').addClass('opacity0'), 3000)
+		
 
 	var canvas = null;
 	var context = null;
