@@ -65,7 +65,7 @@
 			<span class="sub">Fan Art NFTs For MoonRabbit</span>
 		</div>
 	</div>
-	<div class="game-machine-container">
+	<div class="game-machine-container gray">
 		<div class="game-machine"></div>
 	</div>
 </body>
@@ -81,7 +81,6 @@
 
 	const bannerHovered = (className) => {
 		if (!isLoaded) return;
-		console.log(isLoaded)
 		$('.main-bg').addClass('gray');
 		$(className).removeClass(' animate__fadeOutUp')
 		$(className).addClass(' animate__fadeInDown')
@@ -130,6 +129,7 @@
 	setTimeout(() => {
 		$('.text').addClass('title-animation');
 		$('.main-bg').removeClass('gray');
+		$('.game-machine-container').removeClass('gray');
 		$('.pixel-container').addClass('hoverEnabled');
 		isLoaded = true;
 	}, 2000)

@@ -16,7 +16,7 @@
 	background-image: url(../images/bg.png);
 	background-position: bottom;
 	background-size: cover;
-	transition: 1s ease;
+	transition: 2s ease;
 }
 
 .gray {
@@ -32,6 +32,7 @@ body {
 	padding: 0;
 	background-color: black;
 	overflow: hidden;
+	justify-content: center;
 }
 
 .clickable-banners {
@@ -151,21 +152,24 @@ body {
 }
 
 .text {
+	transition: 1s ease-out;
 	opacity: 1;
 	position: absolute;
 	bottom: 50%;
 	z-index: 1;
 	transition: 1s ease;
+	z-index: 4;
 }
 
 .title-animation {
-	transition: 1s ease-in;
+	transition: 1s ease-out;
 	bottom: 5%;
 }
 
 .title-animation h1 {
-	transition: 1s ease-in;
+	transition: 1s ease-out;
 	font-size: 3em;
+	line-height: 60px;
 }
 
 .opacity0 {
@@ -173,20 +177,16 @@ body {
 	opacity: 0;
 }
 
-h1 {
-	font-family: 'VT323', sans-serif;
-	font-size: 122px;
+.glitch {
+	transition: 1s ease-out;
+	font-family: 'poppins', sans-serif;
+	text-transform: uppercase;
+	font-size: 4em;
 	line-height: 124px;
 	color: #ffffff;
 	margin: 0;
 }
 
-.line {
-	width: 100%;
-	height: 2px;
-	background-color: white;
-	margin: 10 px 0;
-}
 h3 {
 	font-family: 'Poppins', sans-serif;
 	font-size: 36px;
@@ -322,10 +322,10 @@ h3 {
 		width: 27vw;
 	}
 	.dialog .dialog-text {
-		padding-right: 20%!important;
+		padding-right: 20% !important;
 	}
 	.dialog.right .dialog-text {
-		padding-right: 26%!important;
+		padding-right: 26% !important;
 	}
 	.dialog-text .mobile-arrow {
 		display: block;
@@ -339,26 +339,41 @@ h3 {
 	.pixel-container .dialog .dialog-text {
 		font-size: 9px;
 	}
-	.title-animation h1 {
-		line-height: 54px;
-		font-size: 2em;
-	}
-	.title-animation {
-		bottom: 90%
-	}
+
 	.dialog {
 		width: 30vw;
 	}
+
 	.dialog.left,
 	.dialog.right {
 		height: 11vw;
+	}
+
+	.text {
+		top: 40%;
+		bottom: unset;
+		width: 90%;
+		padding-left: 10px;
+	}
+	.glitch {
+		font-size: 3.5em;
+		line-height: 58px;
+	}
+	.title-animation h1 {
+		margin-bottom: 16px;
+		line-height: 48px;
+		font-size: 3em;
+	}
+	.title-animation {
+		top: 5%;
+		bottom: unset;
 	}
 }
 
 .game-machine-container {
 	position: fixed;
-	top: 0;
-	left: 0;
+	/* top: 0;
+	left: 0; */
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -372,5 +387,4 @@ h3 {
 	background-image: url(../images/game-machine.png);
 	background-position: center;
 	background-size: cover;
-	transition: 1s ease;
 }
