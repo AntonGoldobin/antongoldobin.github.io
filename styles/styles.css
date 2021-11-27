@@ -281,8 +281,12 @@ h3 {
 	.pixel-container .dialog .dialog-text {
 		font-size: 10px;
 	}
-	h1 {
+	.title-animation h1 {
 		line-height: 54px;
+		font-size: 2em;
+	}
+	.title-animation {
+		bottom: 90%
 	}
 }	
 
