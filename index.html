@@ -25,16 +25,19 @@
 		<a class="moonrabbit-banner clickable-banners" href="https://moonrabbit.com/#about" target="_blank"></a>
 		<a class="vert-left-banner clickable-banners" href="https://moonrabbit.com/#about" target="_blank"></a>
 		<a class="vert-right-banner clickable-banners" href="https://moonrabbit.com/#about" target="_blank"></a>
-		<div class="dialog nft-dialog animate__animated">
+		<div class="dialog bottom nft-dialog animate__animated">
 			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
 		</div>
-		<div class="dialog left-dialog animate__animated">
+		<div class="dialog bottom left-dialog animate__animated">
 			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
 		</div>
-		<div class="dialog vert-right-dialog animate__animated">
+		<div class="dialog left vert-right-dialog animate__animated">
 			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
 		</div>
-		<div class="dialog vert-left-dialog animate__animated">
+		<div class="dialog right vert-left-dialog animate__animated">
+			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
+		</div>
+		<div class="dialog top vert-top-dialog animate__animated">
 			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
 		</div>
 		<div class="smoke left-smoke"></div>
@@ -74,7 +77,7 @@
 		$(className).addClass(' animate__fadeOutUp')
 	};
 
-	$('.nft-market').mouseenter(() => bannerHovered('.nft-dialog')).mouseleave(() => bannerUnhovered('.nft-dialog'));
+	$('.nft-market').mouseenter(() => bannerHovered('.nft-dialog')).mouseleave(() => bannerUnhovered('.nft-dialog'));;
 	$('.left-market').mouseenter(() => bannerHovered('.left-dialog')).mouseleave(() => bannerUnhovered('.left-dialog'));
 	$('.moonrabbit-banner').mouseenter(() => bannerHovered('.vert-top-dialog')).mouseleave(() => bannerUnhovered('.vert-top-dialog'));
 	$('.vert-left-banner').mouseenter(() => bannerHovered('.vert-left-dialog')).mouseleave(() => bannerUnhovered('.vert-left-dialog'));
