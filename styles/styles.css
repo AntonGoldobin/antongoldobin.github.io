@@ -337,7 +337,7 @@ h3 {
 
 @media (max-width: 576px) {
 	.pixel-container .dialog .dialog-text {
-		font-size: 10px;
+		font-size: 9px;
 	}
 	.title-animation h1 {
 		line-height: 54px;
@@ -345,6 +345,13 @@ h3 {
 	}
 	.title-animation {
 		bottom: 90%
+	}
+	.dialog {
+		width: 30vw;
+	}
+	.dialog.left,
+	.dialog.right {
+		height: 11vw;
 	}
 }
 
