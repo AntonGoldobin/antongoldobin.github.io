@@ -20,35 +20,40 @@
 <body>
 	<div class="pixel-container">
 		<canvas id="tv" width="1200" height="1200" class="noise"></canvas>
-		<div data-id="nft-dialog" class="nft-market clickable-banners">
-			<a href="https://twitter.com/rabbitpunks888" target="_blank"></a>
+		<div data-id="nft-dialog" data-link="https://twitter.com/rabbitpunks888" class="nft-market clickable-banners"></div>
+		<div data-id="left-dialog" data-link="https://moonrabbit.com/#about" class="left-market clickable-banners"></div>
+		<div data-id="vert-top-dialog" data-link="https://moonrabbit.com/#about" class="moonrabbit-banner clickable-banners"></div>
+		<div data-id="vert-left-dialog" data-link="https://moonrabbit.com/#about" class="vert-left-banner clickable-banners"></div>
+		<div data-id="vert-right-dialog" data-link="https://moonrabbit.com/#about" class="vert-right-banner clickable-banners"></div>
+		<div data-link="https://twitter.com/rabbitpunks888" class="dialog bottom nft-dialog animate__animated check-mobile-click">
+			<div class="dialog-text check-mobile-click">
+				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
+				<span class="mobile-arrow check-mobile-click"></span>
+			</div>
 		</div>
-		<div data-id="left-dialog" class="left-market clickable-banners">
-			<a href="https://moonrabbit.com/#about" target="_blank"></a>
+		<div data-link="https://moonrabbit.com/#about" class="dialog bottom left-dialog animate__animated check-mobile-click">
+			<div class="dialog-text check-mobile-click">
+				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
+				<span class="mobile-arrow check-mobile-click"></span>
+			</div>
 		</div>
-		<div data-id="vert-top-dialog" class="moonrabbit-banner clickable-banners">
-			<a href="https://moonrabbit.com/#about" target="_blank"></a>
+		<div data-link="https://moonrabbit.com/#about" class="dialog left vert-right-dialog animate__animated check-mobile-click">
+			<div class="dialog-text check-mobile-click">
+				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
+				<span class="mobile-arrow check-mobile-click"></span>
+			</div>
 		</div>
-		<div data-id="vert-left-dialog" class="vert-left-banner clickable-banners">
-			<a href="https://moonrabbit.com/#about" target="_blank"></a>
+		<div data-link="https://moonrabbit.com/#about" class="dialog right vert-left-dialog animate__animated check-mobile-click">
+			<div class="dialog-text check-mobile-click">
+				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
+				<span class="mobile-arrow check-mobile-click"></span>
+			</div>
 		</div>
-		<div data-id="vert-right-dialog" class="vert-right-banner clickable-banners">
-			<a href="https://moonrabbit.com/#about" target="_blank"></a>
-		</div>
-		<div class="dialog bottom nft-dialog animate__animated">
-			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
-		</div>
-		<div class="dialog bottom left-dialog animate__animated">
-			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
-		</div>
-		<div class="dialog left vert-right-dialog animate__animated">
-			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
-		</div>
-		<div class="dialog right vert-left-dialog animate__animated">
-			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
-		</div>
-		<div class="dialog top vert-top-dialog animate__animated">
-			<div class="dialog-text">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</div>
+		<div data-link="https://moonrabbit.com/#about" class="dialog top vert-top-dialog animate__animated check-mobile-click">
+			<div class="dialog-text check-mobile-click">
+				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
+				<span class="mobile-arrow check-mobile-click"></span>
+			</div>
 		</div>
 		<div class="smoke left-smoke"></div>
 		<div class="smoke right-smoke"></div>
@@ -89,34 +94,35 @@
 
 	var target = '';
 
-	const onClickOutside = (e) => {
+	const onClickMobile = (e) => {
 		if (e.target.className.includes('clickable-banners') && !$('.main-bg').hasClass('gray')) {
+			$('.dialog').addClass('first-layer');
 			target = e.target.getAttribute('data-id');
 			$(`.${e.target.className.split(' ')[0]}`).click(bannerHovered(`.${target}`));
+		} else if (e.target.className.includes('check-mobile-click') && $('.main-bg').hasClass('gray')) {
+			$('.dialog').removeClass('first-layer');
+			window.open(e.target.closest('[data-link]').getAttribute('data-link'), '_blank');
+			$(e.target.tagName).click(bannerUnhovered(`.${target}`));
 		} else {
+			$('.dialog').removeClass('first-layer');
 			$(e.target.tagName).click(bannerUnhovered(`.${target}`));
 		}
 	};
 
 	const bannerShow = () => {
 		if ($(window).width() > 768) {
-			$('a').removeClass('disabled');
-			$('.nft-market').mouseenter(() => bannerHovered('.nft-dialog')).mouseleave(() => bannerUnhovered('.nft-dialog'));
-			$('.left-market').mouseenter(() => bannerHovered('.left-dialog')).mouseleave(() => bannerUnhovered('.left-dialog'));
-			$('.moonrabbit-banner').mouseenter(() => bannerHovered('.vert-top-dialog')).mouseleave(() => bannerUnhovered('.vert-top-dialog'));
-			$('.vert-left-banner').mouseenter(() => bannerHovered('.vert-left-dialog')).mouseleave(() => bannerUnhovered('.vert-left-dialog'));
-			$('.vert-right-banner').mouseenter(() => bannerHovered('.vert-right-dialog')).mouseleave(() => bannerUnhovered('.vert-right-dialog'));
+			$('.clickable-banners')
+				.mouseenter((e) => bannerHovered(`.${e.target.getAttribute('data-id')}`))
+				.mouseleave((e) => bannerUnhovered(`.${e.target.getAttribute('data-id')}`))
+				.click((e) => window.open(e.target.getAttribute('data-link'), '_blank'));
 		} else {
-			$('body').click(onClickOutside);
-			$('a').addClass('disabled');
+			$('body').click(onClickMobile);
 		}
 	}
 
 	bannerShow();
 
-	$(window).resize(function() {
-		bannerShow();
-	});
+	$(window).resize(bannerShow);
 
 	setTimeout(() => {
 		$('.text').addClass('title-animation');
