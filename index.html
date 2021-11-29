@@ -22,34 +22,42 @@
 		<canvas id="tv" width="1200" height="1200" class="noise"></canvas>
 		<div data-id="nft-dialog" data-link="https://twitter.com/rabbitpunks888" class="nft-market clickable-banners"></div>
 		<div data-id="left-dialog" data-link="https://moonrabbit.com/#about" class="left-market clickable-banners"></div>
-		<div data-id="vert-top-dialog" data-link="https://moonrabbit.com/#about" class="moonrabbit-banner clickable-banners"></div>
-		<div data-id="vert-left-dialog" data-link="https://moonrabbit.com/#about" class="vert-left-banner clickable-banners"></div>
-		<div data-id="vert-right-dialog" data-link="https://moonrabbit.com/#about" class="vert-right-banner clickable-banners"></div>
-		<div data-link="https://twitter.com/rabbitpunks888" class="dialog bottom nft-dialog animate__animated check-mobile-click">
+		<div data-id="vert-top-dialog" data-link="https://moonrabbit.com/#about"
+			class="moonrabbit-banner clickable-banners"></div>
+		<div data-id="vert-left-dialog" data-link="https://moonrabbit.com/#about"
+			class="vert-left-banner clickable-banners"></div>
+		<div data-id="vert-right-dialog" data-link="https://moonrabbit.com/#about"
+			class="vert-right-banner clickable-banners"></div>
+		<div data-link="https://twitter.com/rabbitpunks888"
+			class="dialog bottom nft-dialog animate__animated check-mobile-click">
 			<div class="dialog-text check-mobile-click">
 				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
 				<span class="mobile-arrow check-mobile-click"></span>
 			</div>
 		</div>
-		<div data-link="https://moonrabbit.com/#about" class="dialog bottom left-dialog animate__animated check-mobile-click">
+		<div data-link="https://moonrabbit.com/#about"
+			class="dialog bottom left-dialog animate__animated check-mobile-click">
 			<div class="dialog-text check-mobile-click">
 				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
 				<span class="mobile-arrow check-mobile-click"></span>
 			</div>
 		</div>
-		<div data-link="https://moonrabbit.com/#about" class="dialog left vert-right-dialog animate__animated check-mobile-click">
+		<div data-link="https://moonrabbit.com/#about"
+			class="dialog left vert-right-dialog animate__animated check-mobile-click">
 			<div class="dialog-text check-mobile-click">
 				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
 				<span class="mobile-arrow check-mobile-click"></span>
 			</div>
 		</div>
-		<div data-link="https://moonrabbit.com/#about" class="dialog right vert-left-dialog animate__animated check-mobile-click">
+		<div data-link="https://moonrabbit.com/#about"
+			class="dialog right vert-left-dialog animate__animated check-mobile-click">
 			<div class="dialog-text check-mobile-click">
 				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
 				<span class="mobile-arrow check-mobile-click"></span>
 			</div>
 		</div>
-		<div data-link="https://moonrabbit.com/#about" class="dialog top vert-top-dialog animate__animated check-mobile-click">
+		<div data-link="https://moonrabbit.com/#about"
+			class="dialog top vert-top-dialog animate__animated check-mobile-click">
 			<div class="dialog-text check-mobile-click">
 				<span class="check-mobile-click">RabbitPunks is UNOFFICIAL Fan Art NFTs For MoonRabbit</span>
 				<span class="mobile-arrow check-mobile-click"></span>
@@ -127,14 +135,15 @@
 
 	$(window).resize(bannerShow);
 
-
-	setTimeout(() => {
-		$('.text').addClass('title-animation');
-		$('.main-bg').removeClass('gray');
-		$('.game-machine-container').removeClass('gray');
-		$('.pixel-container').addClass('hoverEnabled');
-		isLoaded = true;
-	}, 2000)
+	window.addEventListener('load', function () {
+		setTimeout(() => {
+			$('.text').addClass('title-animation');
+			$('.main-bg').removeClass('gray');
+			$('.game-machine-container').removeClass('gray');
+			$('.pixel-container').addClass('hoverEnabled');
+			isLoaded = true;
+		}, 2000);
+	})
 
 
 	var canvas = null;
